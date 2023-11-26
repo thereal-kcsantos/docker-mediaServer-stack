@@ -44,8 +44,8 @@ services:
       - /mnt/trueNas/Media/server/watch/:/downloads
       - /etc/localtime:/etc/localtime:ro
     network_mode: "service:pia_transmission"
-    depends_on:
-      - "pia_transmission"
+    #depends_on:
+    #  - "pia_transmission"
 
   sonarr:
     image: linuxserver/sonarr
@@ -133,8 +133,8 @@ services:
     volumes:
       - /opt/prowlarr/:/config
     network_mode: "service:pia_transmission"
-    depends_on:
-      - "pia_transmission"
+    #depends_on:
+    #  - "pia_transmission"
 
 #  plex:
 #    image: lscr.io/linuxserver/plex:latest
