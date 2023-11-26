@@ -52,7 +52,7 @@ services:
     container_name: sonarr
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/sonarr/:/config
-      - /mnt/trueNas/Media/TV\ Shows/:/tv
+      - /mnt/trueNas/Media/TV Shows/:/tv
       - /mnt/trueNas/Media/server/downloads/complete/:/downloads/complete/
       - /etc/localtime:/etc/localtime:ro
     env_file:
