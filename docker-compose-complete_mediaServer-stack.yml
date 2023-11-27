@@ -43,7 +43,7 @@ services:
       - /mnt/trueNas/nfs/plex/appdata/jackett/:/config
       - /mnt/trueNas/Media/server/watch/:/downloads
       - /etc/localtime:/etc/localtime:ro
-    network_mode: "service:pia_transmission"
+    #network_mode: "service:pia_transmission"
     #depends_on:
     #  - "pia_transmission"
 
@@ -58,7 +58,7 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    network_mode: "service:pia_transmission"
+    #network_mode: "service:pia_transmission"
     depends_on:
       - "pia_transmission"
 
@@ -73,7 +73,7 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    network_mode: "service:pia_transmission"
+    #network_mode: "service:pia_transmission"
     depends_on:
       - "pia_transmission"
 
@@ -88,7 +88,7 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    network_mode: "service:pia_transmission"
+    #network_mode: "service:pia_transmission"
     depends_on:
       - "pia_transmission"
 
@@ -118,7 +118,7 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    network_mode: "service:pia_transmission"
+    #network_mode: "service:pia_transmission"
     depends_on:
       - "pia_transmission"
 
@@ -132,7 +132,7 @@ services:
       - .env
     volumes:
       - /opt/prowlarr/:/config
-    network_mode: "service:pia_transmission"
+    #network_mode: "service:pia_transmission"
     #depends_on:
     #  - "pia_transmission"
 
