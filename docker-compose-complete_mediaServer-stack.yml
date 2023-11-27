@@ -65,13 +65,17 @@ services:
   radarr:
     image: linuxserver/radarr
     container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/radarr:/config
       - /mnt/trueNas/Media/Movies/:/movies
       - /mnt/trueNas/Media/server/downloads/complete/:/downloads/complete/
       - /etc/localtime:/etc/localtime:ro
-    env_file:
-      - .env
+    #env_file:
+    #  - .env
     restart: unless-stopped
     network_mode: "service:pia_transmission"
     depends_on:
