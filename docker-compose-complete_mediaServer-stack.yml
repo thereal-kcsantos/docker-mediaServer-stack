@@ -71,7 +71,7 @@ services:
       - TZ=$TZ
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/radarr:/config
-      - /mnt/trueNas/Media/Movies/:/movies
+      - /mnt/trueNas/Media/:/movies
       - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
       - /etc/localtime:/etc/localtime:ro
     #env_file:
