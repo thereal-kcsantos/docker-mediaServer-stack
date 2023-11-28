@@ -72,7 +72,7 @@ services:
       - TZ=$TZ
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/radarr:/config
-      - /mnt/trueNas/Media/:/movies
+      - /mnt/trueNas/Media/Movies:/movies
       - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
       - /etc/localtime:/etc/localtime:ro
     #env_file:
@@ -100,6 +100,7 @@ services:
     network_mode: "service:pia_transmission"
     depends_on:
       - "pia_transmission"
+    #need to go to .../appdata/radarr-4k/config.xml and edit the port number to 7979:7979, instance name = Radarr-4k
 
   lidarr:
     image: linuxserver/lidarr
