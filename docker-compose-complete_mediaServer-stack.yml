@@ -15,6 +15,7 @@ services:
       - "8989:8989" #sonarr
       - "9117:9117" #jackett
       - "7878:7878" #radarr
+      - "7979:7979" #radarr-4k
       - "8686:8686" #lidarr
       - "8787:8787" #readarr
       - "9696:9696" #prowlarr
@@ -72,6 +73,25 @@ services:
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/radarr:/config
       - /mnt/trueNas/Media/:/movies
+      - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
+      - /etc/localtime:/etc/localtime:ro
+    #env_file:
+    #  - .env
+    restart: unless-stopped
+    network_mode: "service:pia_transmission"
+    depends_on:
+      - "pia_transmission"
+
+  radarr-4k:
+    image: linuxserver/radarr
+    container_name: radarr-4k
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
+    volumes:
+      - /mnt/trueNas/nfs/plex/appdata/radarr-4k:/config
+      - /mnt/trueNas/Media/Movies-4K:/movies
       - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
       - /etc/localtime:/etc/localtime:ro
     #env_file:
