@@ -174,6 +174,7 @@ services:
       - /mnt/trueNas/Media/server/downloads/completed:/downloads #optional
       - /mnt/trueNas/Media/server/downloads/incomplete:/incomplete-downloads #optional
     restart: unless-stopped
+    network_mode: "service:pia_transmission"
 
 #  plex:
 #    image: lscr.io/linuxserver/plex:latest
