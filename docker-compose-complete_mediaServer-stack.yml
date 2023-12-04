@@ -30,7 +30,7 @@ services:
       - .env_openvpn
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/transmission/:/config
-      - /mnt/trueNas/Media/server/downloads/:/data
+      - /mnt/trueNas/Media/server/downloads:/data/downloads
       - /mnt/trueNas/Media/server/watch/:/watch
 
   jackett:
@@ -55,7 +55,7 @@ services:
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/sonarr/:/config
       - /mnt/trueNas/Media/TV Shows/:/tv
-      - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
+      - /mnt/trueNas/Media/server/:/downloads
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
@@ -74,7 +74,7 @@ services:
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/radarr:/config
       - /mnt/trueNas/Media/Movies:/movies
-      - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
+      - /mnt/trueNas/Media/server/:/downloads
       - /etc/localtime:/etc/localtime:ro
     #env_file:
     #  - .env
@@ -93,7 +93,7 @@ services:
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/radarr-4k:/config
       - /mnt/trueNas/Media/Movies-4K:/movies
-      - /mnt/trueNas/Media/server/downloads/completed/:/downloads/completed/
+      - /mnt/trueNas/Media/server/:/downloads
       - /etc/localtime:/etc/localtime:ro
     #env_file:
     #  - .env
@@ -171,7 +171,7 @@ services:
       - TZ=$TZ
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/sabnzbd/:/config
-      - /mnt/trueNas/Media/server/downloads/:/downloads #optional
+      - /mnt/trueNas/Media/server/downloads:/data/downloads #optional
     #  - /mnt/trueNas/Media/server/downloads/incomplete:/incomplete-downloads #optional
       - /mnt/trueNas/Media/server/watch/:/watch
     restart: unless-stopped
