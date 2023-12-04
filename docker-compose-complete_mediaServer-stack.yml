@@ -30,7 +30,7 @@ services:
       - .env_openvpn
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/transmission/:/config
-      - /mnt/trueNas/Media/server/downloads/:/downloads
+      - /mnt/trueNas/Media/server/downloads/:/data
       - /mnt/trueNas/Media/server/watch/:/watch
 
   jackett:
