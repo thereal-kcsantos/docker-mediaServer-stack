@@ -31,6 +31,7 @@ services:
     volumes:
       - /mnt/trueNas/nfs/plex/appdata/transmission/:/config
       - /mnt/trueNas/Media/server/downloads/:/data/completed
+      - /mnt/trueNas/Media/server/downloads/incomplete/:/data/incomplete
       - /mnt/trueNas/Media/server/watch/:/watch
 
   jackett:
